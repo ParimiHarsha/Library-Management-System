@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #add8e6;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .options-container {
+            display: flex;
+            justify-content: center;
+        }
+        .column {
+            margin: 0 20px;
+        }
+        .column ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        .column li {
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            background-color: #ffb6c1; /* Coral color for buttons */
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #ff7f50; /* Lighter coral color on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Library Management System</h1>
+    <div class="options-container">
+        <div class="column">
+            <h2>For Borrowing</h2>
+            <ul>
+                <li><a href="/search">Search for a Book</a></li>
+                <li><a href="/borrow">Borrow a Book</a></li>
+                <li><a href="/dashboard">Library Dashboard</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>For Administration</h2>
+            <ul>
+                <li><a href="/insert">Insert a New Record</a></li>
+                <li><a href="/sql_query">Run SQL Query</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

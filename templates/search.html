@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for a Book</title>
+    <link rel="stylesheet"  type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+    <a href="/" class="back-to-menu">Menu</a>
+    <h2>Search for a Book</h2>
+    <form action="/search" method="POST">
+        <label for="search_query">Enter book title:</label>
+        <input type="text" id="search_query" name="search_query" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

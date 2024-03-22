@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet"  type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+    <h2>Search Results</h2>
+    <p>{{ results|length }} result(s) found.</p>
+    <a href="/search">Back to Search</a>
+    <ol>
+        {% for book in results %}
+            <li>
+                <strong>Book Name:</strong> {{ book[1] }}<br>
+                <strong>ISBN:</strong> {{ book[2] }}<br>
+                <strong>Author Name:</strong> {{ book[5] }}<br>  
+                <strong>Publisher Name:</strong> {{ book[6] }}<br>  
+                <br>
+            </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

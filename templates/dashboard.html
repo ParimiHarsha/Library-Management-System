@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Dashboard</title>
+    <!-- Include any necessary CSS or JavaScript libraries for chart/graph rendering -->
+    <!-- For example: -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
+    <link rel="stylesheet"  type="text/css" href="../static/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <a href="/" class="back-to-menu">Menu</a>
+    <h1>Library Dashboard</h1>
+    
+    <!-- Most Borrowed Books -->
+    <h2>Most Borrowed Books</h2>
+    <ul>
+        {% for book in most_borrowed_books %}
+            <li>{{ book[0] }} ({{ book[1] }} times borrowed)</li>
+        {% endfor %}
+    </ul>
+    
+    <!-- Most Read Writers -->
+    <h2>Most Read Writers</h2>
+    <ul>
+        {% for writer in most_read_writers %}
+            <li>{{ writer[0] }} ({{ writer[1] }} times read)</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+

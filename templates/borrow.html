@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow a Book</title>
+    <link rel="stylesheet"  type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+    <h2>Borrow a Book</h2>
+    <form action="/borrow" method="POST">
+        <label for="customer_id">Customer ID:</label>
+        <input type="text" id="customer_id" name="customer_id" required><br><br>
+
+        <label for="book_id">Book ID:</label>
+        <input type="text" id="book_id" name="book_id" required><br><br>
+
+        <label for="branch_id">Branch ID:</label>
+        <input type="text" id="branch_id" name="branch_id" required><br><br>
+
+        <label for="loan_date">Loan Date:</label>
+        <input type="date" id="loan_date" name="loan_date" required><br><br>
+
+        <label for="return_date">Return Date:</label>
+        <input type="date" id="return_date" name="return_date" required><br><br>
+
+        <input type="submit" value="Borrow">
+    </form>
+    <a href="/" class="back-to-menu">Menu</a>
+</body>
+</html>

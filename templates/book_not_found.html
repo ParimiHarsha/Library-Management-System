@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Not Found</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Book Not Found</h1>
+    <p>The book you searched for was not found.</p>
+    <form action="/search" method="GET">
+        <button type="submit">Search Again</button>
+    </form>
+</body>
+</html>

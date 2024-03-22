@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data</title>
+    <script>
+        // Function to show input fields based on selected table
+        function showFields() {
+            var tableSelect = document.getElementById("table_select");
+            var selectedTable = tableSelect.options[tableSelect.selectedIndex].value;
+            
+            // Hide all input field divs
+            var allFields = document.querySelectorAll(".input-fields");
+            allFields.forEach(field => {
+                field.style.display = "none";
+            });
+            
+            // Show input fields for the selected table
+            var tableFields = document.getElementById(selectedTable.toLowerCase() + "_fields");
+            if (tableFields) {
+                tableFields.style.display = "block";
+            }
+        }
+    </script>
+     <link rel="stylesheet"  type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+    <h2>Insert Data</h2>
+    <form action="/insert" method="POST" onchange="showFields()">
+        <label for="table_select">Select Table:</label>
+        <select id="table_select" name="table_name">
+            <option value="" disabled selected>Select a table</option>
+            <option value="Writer">Writer</option>
+            <option value="Publisher">Publisher</option>
+            <option value="Books">Books</option>
+            <option value="Branch">Branch</option>
+            <option value="Reader">Reader</option>
+            <option value="Loaned">Loaned</option>
+        </select><br><br>
+
+        <!-- Input fields for Writer table -->
+        <div id="writer_fields" class="input-fields" style="display: none;">
+            <label for="writer_name">Name:</label>
+            <input type="text" id="writer_name" name="Name"><br><br>
+            <label for="writer_gender">Gender:</label>
+            <input type="text" id="writer_gender" name="Gender"><br><br>
+            <label for="writer_qualification">Qualification:</label>
+            <input type="text" id="writer_qualification" name="Qualification"><br><br>
+        </div>
+
+        <!-- Input fields for Publisher table -->
+        <div id="publisher_fields" class="input-fields" style="display: none;">
+            <label for="publisher_name">Name:</label>
+            <input type="text" id="publisher_name" name="Name"><br><br>
+            <label for="publisher_city">City:</label>
+            <input type="text" id="publisher_city" name="City"><br><br>
+            <label for="publisher_zip">Zip:</label>
+            <input type="text" id="publisher_zip" name="Zip"><br><br>
+        </div>
+
+        <!-- Input fields for Books table -->
+        <div id="books_fields" class="input-fields" style="display: none;">
+            <label for="books_name">Name:</label>
+            <input type="text" id="books_name" name="Name"><br><br>
+            <label for="books_isbn">ISBN:</label>
+            <input type="text" id="books_isbn" name="ISBN"><br><br>
+            <label for="books_writer_id">Writer ID:</label>
+            <input type="text" id="books_writer_id" name="Writer_ID"><br><br>
+            <label for="books_publisher_id">Publisher ID:</label>
+            <input type="text" id="books_publisher_id" name="Publisher_ID"><br><br>
+        </div>
+
+        <!-- Input fields for Branch table -->
+        <div id="branch_fields" class="input-fields" style="display: none;">
+            <label for="branch_city">City:</label>
+            <input type="text" id="branch_city" name="city"><br><br>
+            <label for="branch_street">Street:</label>
+            <input type="text" id="branch_street" name="street"><br><br>
+            <label for="branch_state">State:</label>
+            <input type="text" id="branch_state" name="state"><br><br>
+            <label for="branch_zip">ZIP Code:</label>
+            <input type="text" id="branch_zip" name="zip"><br><br>
+        </div>
+
+        <!-- Input fields for Reader table -->
+        <div id="reader_fields" class="input-fields" style="display: none;">
+            <label for="reader_name">Name:</label>
+            <input type="text" id="reader_name" name="Name"><br><br>
+            <label for="reader_email">Email:</label>
+            <input type="text" id="reader_email" name="Email"><br><br>
+            <label for="reader_phone">Phone:</label>
+            <input type="text" id="reader_phone" name="Phone"><br><br>
+            <label for="reader_city">City:</label>
+            <input type="text" id="reader_city" name="City"><br><br>
+            <label for="reader_zip">Zip:</label>
+            <input type="text" id="reader_zip" name="Zip"><br><br>
+        </div>
+
+        <!-- Input fields for Loaned table -->
+        <div id="loaned_fields" class="input-fields" style="display: none;">
+            <label for="loaned_reader_id">Reader ID:</label>
+            <input type="text" id="loaned_reader_id" name="Reader_ID"><br><br>
+            <label for="loaned_book_id">Book ID:</label>
+            <input type="text" id="loaned_book_id" name="Book_ID"><br><br>
+            <label for="loaned_branch_id">Branch ID:</label>
+            <input type="text" id="loaned_branch_id" name="Branch_ID"><br><br>
+            <label for="loaned_loan_date">Loan Date:</label>
+            <input type="date" id="loaned_loan_date" name="Loan_Date"><br><br>
+            <label for="loaned_return_date">Return Date:</label>
+            <input type="date" id="loaned_return_date" name="Return_Date"><br><br>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/" class="back-to-menu">Menu</a>
+</body>
+</html>

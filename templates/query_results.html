@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Query Results</title>
+    <link rel="stylesheet"  type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+    <a href="/" class="back-to-menu">Menu</a>
+    <a href="/sql_query" class="back-to-menu">Run Query</a>
+
+    <h2>SQL Query Results</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for col in result[0].keys() %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+                <tr>
+                    {% for value in row.values() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
