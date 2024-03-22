@@ -120,11 +120,11 @@ def insert_data():
             )
             val = (city, street, state, zip_code)
         elif table_name == "Reader":
-            name = request.form["Name"]
-            email = request.form["Email"]
-            phone = request.form["Phone"]
-            city = request.form["City"]
-            zip_code = request.form["Zip"]
+            name = request.form["reader_name"]
+            email = request.form["email"]
+            phone = request.form["phone"]
+            city = request.form["city"]
+            zip_code = request.form["zip"]
             sql = "INSERT INTO Reader (Name, Email, Phone, City, Zip) VALUES (%s, %s, %s, %s, %s)"
             val = (name, email, phone, city, zip_code)
         elif table_name == "Loaned":
@@ -133,7 +133,7 @@ def insert_data():
             branch_id = request.form["Branch_ID"]
             issue_date = request.form["Loan_Date"]
             return_date = request.form["Return_Date"]
-            sql = "INSERT INTO Loaned (Reader_ID, Book_ID, Branch_ID, Loan_Date, Return_Date) VALUES (%s, %s, %s, %s, %s)"
+            sql = "INSERT INTO Loaned (Reader_ID, Book_ID, Branch_ID, Issue_Date, Return_Date) VALUES (%s, %s, %s, %s, %s)"
             val = (reader_id, book_id, branch_id, issue_date, return_date)
 
         # Execute SQL query and commit changes
@@ -165,7 +165,7 @@ def borrow_book():
         customer_id = request.form["customer_id"]
         book_id = request.form["book_id"]
         branch_id = request.form["branch_id"]
-        issue_date = request.form["loan_date"]
+        issue_date = request.form["Load_Date"]
         return_date = request.form["return_date"]
 
         # Example: Inserting borrowed book details into the database
